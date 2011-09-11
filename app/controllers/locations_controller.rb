@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
   
   def index
+    @location = Location.new #for new form
     if params[:search].present?
       @locations = Location.near(params[:search], 50, :order => :distance)
     else
@@ -19,9 +20,12 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(params[:location])
     if @location.save
-      redirect_to @location, :notice => "Successfully created location."
+      respond_to do |format|
+        format.js
+        format.html {redirect_to @location, :notice => "Successfully created location."}
+      end
     else
-      render :action => 'new'
+      #render :action => 'new'
     end
   end
 

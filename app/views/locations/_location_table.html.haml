@@ -1,0 +1,7 @@
+%tr{:id =>"location-#{location.id}"}
+  %td= location.address
+  /%td= location.latitude
+  /%td= location.longitude
+  %td= link_to "Show", location
+  %td= link_to "Edit", edit_location_path(location)
+  %td= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete, :remote => true

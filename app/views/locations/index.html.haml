@@ -3,17 +3,19 @@
   %p
     = text_field_tag :search, params[:search]
     = submit_tag "Search Near", :name => nil
-%table
+
+%table{:class => "location_family"}
   %tr
     %th Address
-    %th Latitude
-    %th Longitude
+    /%th Latitude
+    /%th Longitude
   - for location in @locations
-    %tr{:id =>"location-#{location.id}"}
-      %td= location.address
-      %td= location.latitude
-      %td= location.longitude
-      %td= link_to "Show", location
-      %td= link_to "Edit", edit_location_path(location)
-      %td= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete, :remote => true
-%p= link_to "New Location", new_location_path
+    = render :partial => 'location_table', :locals => {:location => location}
+
+
+%p= link_to "New Location", '#', :onclick => '$("#new_form").slideDown(50)'
+
+
+#new_form{:style => 'display:none'}
+  = render 'form'
+  
