@@ -29,5 +29,10 @@ Geocode::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.silence_warnings do
+    require 'pry'
+    IRB = Pry
+  end
+
 end
 

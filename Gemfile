@@ -10,6 +10,7 @@ group :development do
   gem "nifty-generators"
   gem 'rspec-rails', '2.6.1'
   gem 'thin'
+  gem 'pry'
 end
 
 group :test do
