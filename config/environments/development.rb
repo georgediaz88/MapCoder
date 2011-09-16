@@ -34,5 +34,15 @@ Geocode::Application.configure do
     IRB = Pry
   end
 
+  config.after_initialize do
+    #11111111 , 2->
+    ActiveMerchant::Billing::Base.mode = :test
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(
+      :login => "george_1316141789_biz_api1.gmail.com",
+      :password => "1316141817",
+      :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31A8PogLL4SV00Z8b3so.10msWagkY"
+    )
+  end
+
 end
 

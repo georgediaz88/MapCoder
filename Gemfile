@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'sqlite3'
 gem "geocoder"
 gem "haml-rails"
+gem "activemerchant", :require => "active_merchant"
 
 group :development do 
   gem "nifty-generators"

@@ -1,0 +1,13 @@
+= form_for @order do |f|
+  = f.hidden_field :express_token
+  %table
+    %tr
+      %th Name from Pay Pal
+      %td
+        = @order.first_name
+        = @order.last_name
+    %tr
+      %th Total Payment
+      %td
+        $#{@order.price_in_cents / 100.0}
+  = f.submit "Checkout"
