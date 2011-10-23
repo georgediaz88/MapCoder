@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Tasks" do
-  before(:each) do
+  before(:all) do
     @user = Factory.create(:user)
     @location = Factory(:location)
     login_usr
