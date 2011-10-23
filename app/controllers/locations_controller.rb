@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
-  
+  before_filter :authenticate_user!#, :except => [:show, :index]
+
   def index
     @location = Location.new #for new form
     if params[:search].present?
