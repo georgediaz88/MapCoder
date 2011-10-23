@@ -3,12 +3,13 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'jquery-rails'
 gem 'sqlite3'
-gem "geocoder"
-gem "haml-rails"
-gem "activemerchant", :require => "active_merchant"
+gem 'geocoder'
+gem 'haml-rails'
+gem 'activemerchant', :require => 'active_merchant'
+gem 'devise'
 
 group :development do 
-  gem "nifty-generators"
+  gem 'nifty-generators'
   gem 'rspec-rails', '2.6.1'
   gem 'thin'
   gem 'pry'
@@ -17,13 +18,13 @@ end
 group :test do
   gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
   gem 'launchy'
-  gem "mocha"
+  gem 'mocha'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end
 
 group :assests do 
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'sass-rails', ' ~> 3.1.0'
+  gem 'coffee-rails', '~> 3.1.0'
   gem 'uglifier'
 end
