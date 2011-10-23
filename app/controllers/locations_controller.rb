@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:destroy]
+  before_filter :authenticate_user!, :only => [:edit, :destroy]
 
   def index
     @location = Location.new #for new form
