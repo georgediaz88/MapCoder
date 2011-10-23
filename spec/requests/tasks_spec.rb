@@ -2,17 +2,26 @@ require 'spec_helper'
 
 describe "Tasks" do
   before(:each) do
+    @user = Factory.create(:user)
     @location = Factory(:location)
+    login_usr
   end
 
-  describe "GET /locations" do
-    it "displays locations" do
-      get locations_path
-      response.status.should be(200)
-    end
+  def login_usr
+    visit '/'
+    fill_in 'Username', :with => @user.username
+    fill_in 'Password', :with => @user.password
+    click_button 'Sign in'
   end
+
+  # describe "GET /locations" do
+  #   it "displays locations" do
+  #     get locations_path
+  #     response.status.should be(200)
+  #   end
+  # end
   
-  describe "Post /locations" do
+  describe "POST /locations" do
     it "creates location" do
       visit new_location_path
       fill_in "Address", :with => @location.address
