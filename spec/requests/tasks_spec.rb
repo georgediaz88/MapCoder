@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Tasks" do
-  before(:all) do
+  before(:all) do #setup and login then run our suite specs
     @user = Factory.create(:user)
     @location = Factory(:location)
     login_usr

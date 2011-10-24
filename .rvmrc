@@ -1,1 +1,1 @@
-rvm use ree@rails3.1 --create
+rvm use ruby-1.9.2@rails3.1 --create
